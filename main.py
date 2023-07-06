@@ -2,7 +2,23 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 from tkinter import filedialog as fd
+from tkinter.messagebox import showinfo
 import pandas as pd
+
+
+def select_file():
+    filetypes = (
+        ('text files', '*.txt'),
+        ('All files', '*.*')
+    )
+    filename = fd.askopenfilename(
+        title='Open a file',
+        initialdir='/',
+        filetypes=filetypes)
+    # showinfo(
+    #     title='Selected File',
+    #     message=filename
+    # )
 
 
 class Graphy(tk.Tk):
@@ -56,6 +72,13 @@ class Chart(ttk.Frame):
 
         b = Button(frame, text="Chart")
         b.grid(row=0, column=0, sticky="EW")
+
+        open_button = ttk.Button(
+            frame,
+            text='Open a File',
+            command=select_file
+        )
+        open_button.grid(row=1, column=0, sticky="EW")
 
         switch_page_button = ttk.Button(
             self,

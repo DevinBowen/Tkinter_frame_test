@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
+from tkinter import filedialog as fd
+import pandas as pd
 
 
 class Graphy(tk.Tk):
@@ -65,3 +67,7 @@ class Chart(ttk.Frame):
 
 root = Graphy()
 root.mainloop()
+
+
+# ---TEST CODE---
+print(pd.__version__)

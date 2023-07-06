@@ -55,7 +55,7 @@ class Graph(ttk.Frame):
         b.grid(row=0, column=0, sticky="EW")
         b2.grid(row=0, column=1, sticky="EW")
 
-        switch_page_button = ttk.Button(
+        switch_page_button = Button(
             self,
             text="Switch to feet conversion",
             command=lambda: controller.show_frame(Chart)
@@ -73,14 +73,14 @@ class Chart(ttk.Frame):
         b = Button(frame, text="Chart")
         b.grid(row=0, column=0, sticky="EW")
 
-        open_button = ttk.Button(
+        open_button = Button(
             frame,
             text='Open a File',
             command=select_file
         )
         open_button.grid(row=1, column=0, sticky="EW")
 
-        switch_page_button = ttk.Button(
+        switch_page_button = Button(
             self,
             text="Switch to feet conversion",
             command=lambda: controller.show_frame(Graph)

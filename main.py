@@ -30,15 +30,15 @@ class Graph(ttk.Frame):
         super().__init__(container)
 
         frame = LabelFrame(self, padx=50, pady=50)
-        frame.pack(padx=10, pady=10)
+        frame.grid(padx=10, pady=10)
 
         b = Button(frame, text="Graph")
         b2 = Button(frame, text="NO")
-        b.grid(row=0, column=0)
-        b2.grid(row=0, column=1)
+        b.grid(row=0, column=0, sticky="EW")
+        b2.grid(row=0, column=1, sticky="EW")
 
         switch_page_button = ttk.Button(
-            frame,
+            self,
             text="Switch to feet conversion",
             command=lambda: controller.show_frame(Chart)
         )
@@ -50,13 +50,13 @@ class Chart(ttk.Frame):
         super().__init__(container)
 
         frame = LabelFrame(self, padx=50, pady=50)
-        frame.pack(padx=10, pady=10)
+        frame.grid(padx=10, pady=10)
 
         b = Button(frame, text="Chart")
-        b.grid(row=0, column=0)
+        b.grid(row=0, column=0, sticky="EW")
 
         switch_page_button = ttk.Button(
-            frame,
+            self,
             text="Switch to feet conversion",
             command=lambda: controller.show_frame(Graph)
         )

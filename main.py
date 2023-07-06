@@ -37,6 +37,13 @@ class Graph(ttk.Frame):
         b.grid(row=0, column=0)
         b2.grid(row=0, column=1)
 
+        switch_page_button = ttk.Button(
+            frame,
+            text="Switch to feet conversion",
+            command=lambda: controller.show_frame(Chart)
+        )
+        switch_page_button.grid(column=0, row=1, columnspan=2, sticky="EW")
+
 
 class Chart(ttk.Frame):
     def __init__(self, container, controller):
@@ -47,6 +54,13 @@ class Chart(ttk.Frame):
 
         b = Button(frame, text="Chart")
         b.grid(row=0, column=0)
+
+        switch_page_button = ttk.Button(
+            frame,
+            text="Switch to feet conversion",
+            command=lambda: controller.show_frame(Graph)
+        )
+        switch_page_button.grid(column=0, row=1, columnspan=2, sticky="EW")
 
 
 root = Graphy()
